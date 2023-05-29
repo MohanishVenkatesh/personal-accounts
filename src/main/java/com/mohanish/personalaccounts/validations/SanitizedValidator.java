@@ -11,7 +11,7 @@ public class SanitizedValidator implements ConstraintValidator<Sanitized, String
     @Override
     public boolean isValid(String value, ConstraintValidatorContext context) {
         // Implement your sanitization logic here
-        String sanitizedValue = value.replaceAll("[^a-zA-Z0-9]", "");
+        String sanitizedValue = value.replaceAll("[^a-zA-Z0-9 ]", "");
 
         // Check if the sanitized value is equal to the original value
         return sanitizedValue.equals(value);
